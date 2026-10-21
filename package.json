@@ -1,0 +1,49 @@
+{
+  "name": "envcheck",
+  "version": "0.1.0",
+  "description": "Check .env files against .env.example and fail CI when a variable is missing. Zero dependencies.",
+  "license": "MIT",
+  "author": "Yosef Ehrenfeld",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Yossiehrenfeld/envcheck.git"
+  },
+  "keywords": [
+    "dotenv",
+    "env",
+    "environment variables",
+    "ci",
+    "lint",
+    "config"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0",
+    "@types/node": "^20.0.0"
+  },
+  "bin": {
+    "envcheck": "./dist/cli.js"
+  }
+}
