@@ -1,5 +1,8 @@
 # envcheck
 
+[![CI](https://github.com/Yossiehrenfeld/envcheck/actions/workflows/ci.yml/badge.svg)](https://github.com/Yossiehrenfeld/envcheck/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Make sure every variable in `.env.example` is actually set in `.env` (or `.env.production`, or
 whatever you deploy with) — and fail CI when one is missing, instead of finding out in production.
 Zero dependencies.
@@ -16,10 +19,20 @@ $ echo $?
 
 ## Install
 
+Not on npm yet — install straight from GitHub (npm builds it on install):
+
 ```sh
-npm install -D envcheck
-npx envcheck
+npm install --save-dev github:Yossiehrenfeld/envcheck
 ```
+
+Or clone and build it yourself:
+
+```sh
+git clone https://github.com/Yossiehrenfeld/envcheck && cd envcheck
+npm install && npm run build && npm link   # puts `envcheck` on your PATH
+```
+
+Requires Node 18+.
 
 ## Usage
 

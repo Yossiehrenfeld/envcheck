@@ -1,6 +1,6 @@
 {
   "name": "envcheck",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Check .env files against .env.example and fail CI when a variable is missing. Zero dependencies.",
   "license": "MIT",
   "author": "Yosef Ehrenfeld",
@@ -21,7 +21,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "vitest run",
-    "prepublishOnly": "npm run build"
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -45,5 +45,9 @@
   },
   "bin": {
     "envcheck": "./dist/cli.js"
+  },
+  "homepage": "https://github.com/Yossiehrenfeld/envcheck#readme",
+  "bugs": {
+    "url": "https://github.com/Yossiehrenfeld/envcheck/issues"
   }
 }
